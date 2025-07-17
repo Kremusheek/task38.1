@@ -1,23 +1,14 @@
-import React, { useState } from "react";
-import UserFetcher from "./components/UserFetcher";
+import UserProfile from './components/UserProfile';
+import ThemeSwitcher from './components/ThemeSwitcher';
 
-const App = () => {
-  const [userId, setUserId] = useState(1); // Стан для ID користувача
-
+function App() {
   return (
-    <div>
-      <h1>Користувачі</h1>
-      <label>Введіть ID користувача: </label>
-      <input
-        type="number"
-        value={userId}
-        onChange={(e) => setUserId(Number(e.target.value))}
-        min="1"
-        max="10"
-      />
-      <UserFetcher userId={userId} />
+    <div className="app">
+      <h1>Демонстрацiя React Context</h1>
+      <UserProfile />
+      <ThemeSwitcher />
     </div>
   );
-};
+}
 
 export default App;
